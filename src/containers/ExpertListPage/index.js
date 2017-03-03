@@ -1,4 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+
+import ExpertList from '../../components/ExpertList/';
 
 class ExpertListPage extends Component {
   static propTypes = {
@@ -10,10 +13,18 @@ class ExpertListPage extends Component {
   render() {
     return (
       <div className="expert-list-container">
-        ExpertListPage
+        <ExpertList experts={this.props.experts} />
       </div>
     );
   }
 }
 
-export default ExpertListPage;
+
+function mapStatesToProps(state) {
+  return {
+    experts: state.experts
+  }
+}
+
+
+export default connect(mapStatesToProps, {})(ExpertListPage);

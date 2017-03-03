@@ -1,0 +1,37 @@
+.expert-list {
+  background-color:$m-bg-color;
+  .title {
+    height:50px;
+    border-bottom:2px solid $m-color;
+    span {
+      display:inline-block;
+      padding:0 40px;
+      height:100%;
+      line-height:50px;
+      color:#fff;
+      font-size:16px;
+      text-align:center;
+      background-color:$m-color;
+    }
+  }
+  .table-wrapper {
+    padding:20px;
+  }
+  table {
+    width:100%;
+    thead {
+      background-color:#e6f9ff;
+    }
+    tbody {
+      background-color:#f5fdff;
+    }
+    tr {
+      height:38px;
+    }
+    th, td {
+      color:#333;
+      font-size:16px;
+      border: 1px solid #ced3d9;
+    }
+  }
+}

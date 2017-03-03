@@ -1,0 +1,22 @@
+@import './_variable.css';
+
+.constitution {
+  background-color:$m-bg-color;
+  .title {
+    height:50px;
+    border-bottom:2px solid $m-color;
+    span {
+      display:inline-block;
+      padding:0 40px;
+      height:100%;
+      line-height:50px;
+      color:#fff;
+      font-size:16px;
+      text-align:center;
+      background-color:$m-color;
+    }
+  }
+  .text {
+    padding:20px;
+  }
+}

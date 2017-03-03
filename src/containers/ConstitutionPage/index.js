@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
+import Constitution from '../../components/Constitution/';
+
 class ConstitutionPage extends Component {
   static propTypes = {
     children: PropTypes.node,
@@ -10,7 +12,7 @@ class ConstitutionPage extends Component {
   render() {
     return (
       <div className="constitution-container">
-        ConstitutionPage
+        <Constitution />
       </div>
     );
   }

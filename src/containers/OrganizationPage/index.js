@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
+import Organization from '../../components/Organization/';
+
 class OrganizationPage extends Component {
   static propTypes = {
     children: PropTypes.node,
@@ -9,7 +11,7 @@ class OrganizationPage extends Component {
   render() {
     return (
       <div className="organization-container">
-        OrganizationPage
+        <Organization />
       </div>
     );
   }

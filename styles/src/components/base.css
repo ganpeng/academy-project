@@ -3,12 +3,27 @@
 * {
   margin:0;
   padding:0;
+  box-sizing:border-box;
 }
 
 a {
   text-decoration:none;
 }
 
+h1, h2, h3, h4, h5 {
+  font-weight:normal;
+}
+
+
+table {
+  border-collapse:collapse;
+  border-spacing:0;
+}
+
+th, td {
+  text-align:center;
+  font-weight:normal;
+}
 
 
 html,
@@ -16,7 +31,6 @@ body,
 #root {
   width:100%;
   height:100%;
-  overflow:hidden;
 }
 
 
@@ -26,6 +40,11 @@ body {
 }
 
 
+#content {
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
 
 
 
@@ -33,4 +52,5 @@ body {
 .content-wrapper {
   width:$content-width;
   margin:0 auto;
+  background-color:#fff;
 }
