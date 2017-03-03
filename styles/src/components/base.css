@@ -22,6 +22,7 @@ body,
 
 body {
   background-color:$s-bg-color;
+  font:14px 黑体, Roboto, arial, sans-serif;
 }
 
 

@@ -6,6 +6,10 @@ import { Provider } from 'react-redux';
 
 import App from './containers/App/';
 import genStore from './store/'
+import utils from './utils/'
+
+
+utils.getContentHeight()
 
 
 

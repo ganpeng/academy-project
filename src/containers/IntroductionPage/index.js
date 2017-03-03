@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
+import Introduction from '../../components/Introduction/';
 
 class IntroductionPage extends Component {
   static propTypes = {
@@ -11,7 +12,7 @@ class IntroductionPage extends Component {
   render() {
     return (
       <div className="introduction-container">
-        IntroductionPage
+        <Introduction />
       </div>
     );
   }
