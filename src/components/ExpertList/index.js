@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
 import ExpertTable from '../ExpertTable/';
+import Pagination from '../Pagination/';
 
 class ExpertList extends Component {
   static propTypes = {
@@ -16,6 +17,7 @@ class ExpertList extends Component {
           <span>专家委员会名单</span>
         </h2>
         <ExpertTable experts={this.props.experts} />
+        <Pagination />
       </div>
     );
   }
