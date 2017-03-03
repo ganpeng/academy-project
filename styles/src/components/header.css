@@ -1,0 +1,50 @@
+@import './_variable.css';
+
+.header {
+  width:100%;
+  height:100px;
+  background-color:$m-bg-color;
+  .content-wrapper {
+    position:relative;
+    height:100%;
+  }
+  .logo {
+    position:absolute;
+    top:50%;
+    left:0;
+    width:430px;
+    height:62px;
+    margin-top:-31px;
+    background-color:green;
+  }
+  .nav-list {
+    position:absolute;
+    top:0;
+    right:0;
+    height:100%;
+    .nav-item {
+      display:inline-block;
+      height:100%;
+      padding:0 10px;
+      &.active {
+        background-color:$nav-color;
+        .item-text {
+          color:#fff;
+        }
+      }
+    }
+    .item-icon {
+      display:block;
+      width:30px;
+      height:35px;
+      margin:0 auto;
+      margin-top:25px;
+      background-color:gray;
+    }
+    .item-text {
+      font-size:16px;
+      line-height:40px;
+      color:$nav-color;
+    }
+  }
+}

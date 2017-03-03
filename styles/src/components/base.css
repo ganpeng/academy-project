@@ -5,6 +5,11 @@
   padding:0;
 }
 
+a {
+  text-decoration:none;
+}
+
+
 
 html,
 body,
@@ -17,4 +22,14 @@ body,
 
 body {
   background-color:$s-bg-color;
+}
+
+
+
+
+
+
+.content-wrapper {
+  width:$content-width;
+  margin:0 auto;
 }
