@@ -1,15 +1,15 @@
 import co from 'co';
 
-import Leader from '../models/leader';
+import Expert from '../models/expert';
 
 
-export function getLeaders(req, res) {
+export function getExperts(req, res) {
   co(function*() {
-    const leaders = yield Leader.find({}).exec();
+    const experts = yield Expert.find({}).exec();
     return res.json({
       success: 'ok',
       result: {
-        leaders
+        experts
       }
     });
   }).catch((err) => {
@@ -18,14 +18,14 @@ export function getLeaders(req, res) {
 }
 
 
-export function getLeader(req, res) {
+export function getExpert(req, res) {
   co(function*() {
     const { id } = req.params;
-    const leader = yield Leader.findById(id).exec();
+    const expert = yield Expert.findById(id).exec();
     return res.json({
       success: 'ok',
       result: {
-        leader
+        expert
       }
     });
 
@@ -34,11 +34,11 @@ export function getLeader(req, res) {
   })
 }
 
-export function addLeader(req, res) {
+export function addExpert(req, res) {
   co(function* () {
-    const leader = req.body;
+    const expert = req.body;
 
-    if (yield Leader.create(leader)) {
+    if (yield Expert.create(expert)) {
       return res.json({
         success: 'ok'
       })
@@ -50,12 +50,12 @@ export function addLeader(req, res) {
 }
 
 
-export function updateLeader(req, res) {
+export function updateExpert(req, res) {
   co(function*() {
     const { id } = req.params;
     const update = req.body;
 
-    yield Leader.findByIdAndUpdate(id, update).exec();
+    yield Expert.findByIdAndUpdate(id, update).exec();
 
     return res.json({
       success: 'ok',
@@ -66,10 +66,10 @@ export function updateLeader(req, res) {
   })
 }
 
-export function deleteLeader(req, res) {
+export function deleteExpert(req, res) {
   co(function*() {
     const { id } = req.params;
-    yield Leader.findByIdAndRemove(id).exec();
+    yield Expert.findByIdAndRemove(id).exec();
 
     return res.json({
       success: 'ok'
@@ -82,11 +82,11 @@ export function deleteLeader(req, res) {
 
 
 export default {
-  getLeader,
-  getLeaders,
-  addLeader,
-  updateLeader,
-  deleteLeader
+  getExpert,
+  getExperts,
+  addExpert,
+  updateExpert,
+  deleteExpert
 }
 
 
