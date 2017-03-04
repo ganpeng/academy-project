@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
+import Leader from '../../components/Leader/';
+
 class LeaderPage extends Component {
   static propTypes = {
     children: PropTypes.node,
@@ -10,7 +12,7 @@ class LeaderPage extends Component {
   render() {
     return (
       <div className="leader-container">
-        LeaderPage
+        <Leader />
       </div>
     );
   }

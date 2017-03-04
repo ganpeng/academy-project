@@ -1,0 +1,26 @@
+.leader {
+  padding:16px;
+}
+
+
+.leader-list {
+  .leader-item {
+    height:200px;
+    margin-bottom:10px;
+    border:1px solid #ced3d9;
+    overflow:hidden;
+    &:last-of-type {
+      margin-bottom:0;
+    }
+    .leader-img {
+      float:left;
+      width:160px;
+      height:200px;
+      margin-right:10px;
+      background-color:red;
+    }
+    .leader-info {
+      overflow:hidden;
+    }
+  }
+}
