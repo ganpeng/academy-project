@@ -2,13 +2,22 @@ import co from 'co';
 
 import Leader from '../models/leader';
 
+const LIMIT = 2;
+
 
 export function getLeaders(req, res) {
   co(function*() {
-    const leaders = yield Leader.find({}).exec();
+    let { page } = req.params;
+    const skip = (parseInt(page) - 1) * LIMIT;
+    const leaders = yield Leader.find({}).skip(skip).limit(LIMIT).exec();
+    const totalLeaders = yield Leader.find({}).count().exec();
+    const pages = Math.ceil(totalLeaders / LIMIT);
+    const currentPage = parseInt(page);
     return res.json({
       success: 'ok',
       result: {
+        currentPage,
+        pages,
         leaders
       }
     });

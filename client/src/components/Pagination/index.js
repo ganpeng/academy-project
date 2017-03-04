@@ -7,38 +7,33 @@ class Pagination extends Component {
     className: PropTypes.string,
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      pages:10,
-      currentPage:2
-    };
-  }
-
 
   gotoFirst() {
-    this.setState({currentPage: 1});
+    this.props.getLeaders(1);
   }
 
   gotoLast() {
-    this.setState({currentPage: this.state.pages});
+    const { currentPage, pages } = this.props
+    this.props.getLeaders(pages);
   }
 
   gotoPrev() {
-    this.setState({currentPage: this.state.currentPage - 1});
+    const { currentPage, pages } = this.props
+    this.props.getLeaders(currentPage - 1);
   }
 
   gotoNext() {
-    this.setState({currentPage: this.state.currentPage + 1});
+    const { currentPage, pages } = this.props
+    this.props.getLeaders(currentPage + 1);
   }
 
   gotoPage(page) {
-    this.setState({ currentPage: page + 1 })
+    this.props.getLeaders(page + 1);
   }
 
 
   render() {
-    const { pages, currentPage } = this.state;
+    const { pages, currentPage } = this.props;
 
     let p = _.range(pages).map((i) => {
       if ((i + 1) === currentPage) {
