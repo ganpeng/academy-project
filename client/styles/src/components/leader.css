@@ -19,7 +19,8 @@
       width:160px;
       height:200px;
       margin-right:10px;
-      background-color:red;
+      background:#fff url('../../images/loading.gif') center center no-repeat;
+      background-size:40px 40px;
     }
     .leader-info {
       overflow:hidden;

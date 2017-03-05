@@ -7,6 +7,11 @@ class Constitution extends Component {
   };
 
 
+  componentDidMount() {
+    this.props.getConstitution();
+  }
+
+
   render() {
     return (
       <div className="content-wrapper constitution">
@@ -14,7 +19,7 @@ class Constitution extends Component {
           <span>章程</span>
         </h2>
         <div className="text">
-            这是章程
+          {this.props.constitution.content}
         </div>
       </div>
     );

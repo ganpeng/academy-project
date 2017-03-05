@@ -5,11 +5,11 @@ import Constitution from '../models/constitution';
 
 export function getConstitutions(req, res) {
   co(function*() {
-    const constitutions = yield Constitution.find({}).exec();
+    const constitution = yield Constitution.findOne({}).exec();
     return res.json({
       success: 'ok',
       result: {
-        constitutions
+        constitution
       }
     });
   }).catch((err) => {
