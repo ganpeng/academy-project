@@ -9,26 +9,26 @@ class Pagination extends Component {
 
 
   gotoFirst() {
-    this.props.getLeaders(1);
+    this.props.gotoPage(1);
   }
 
   gotoLast() {
     const { currentPage, pages } = this.props
-    this.props.getLeaders(pages);
+    this.props.gotoPage(pages);
   }
 
   gotoPrev() {
     const { currentPage, pages } = this.props
-    this.props.getLeaders(currentPage - 1);
+    this.props.gotoPage(currentPage - 1);
   }
 
   gotoNext() {
     const { currentPage, pages } = this.props
-    this.props.getLeaders(currentPage + 1);
+    this.props.gotoPage(currentPage + 1);
   }
 
   gotoPage(page) {
-    this.props.getLeaders(page + 1);
+    this.props.gotoPage(page + 1);
   }
 
 

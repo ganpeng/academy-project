@@ -1,8 +1,9 @@
 import * as _ from 'lodash';
-import { UPDATE_LEADER_PAGINATION } from '../constants/';
+import { UPDATE_LEADER_PAGINATION, UPDATE_EXPERT_PAGINATION } from '../constants/';
 
 const initialState = {
-  leaderPagination: {}
+  leaderPagination: {},
+  expertPagination: {}
 };
 
 
@@ -11,6 +12,9 @@ export default (state = initialState, action = {}) => {
     case UPDATE_LEADER_PAGINATION:
       const leaderPagination = {pages: action.pages, currentPage: action.currentPage};
       return _.merge(state, {leaderPagination});
+    case UPDATE_EXPERT_PAGINATION:
+      const expertPagination = {pages: action.pages, currentPage: action.currentPage};
+      return _.merge(state, {expertPagination});
     default:
       return state;
   }

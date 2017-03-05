@@ -9,15 +9,21 @@ class ExpertList extends Component {
     className: PropTypes.string,
   };
 
+  componentDidMount() {
+    this.props.getExperts(1);
+  }
 
   render() {
+    const { experts, expertPagination, getExperts } = this.props;
+    const { currentPage, pages } = expertPagination;
+
     return (
       <div className="content-wrapper expert-list">
         <h2 className="title">
           <span>专家委员会名单</span>
         </h2>
         <ExpertTable experts={this.props.experts} />
-        <Pagination />
+        <Pagination  currentPage={currentPage}  pages={pages} gotoPage={getExperts} />
       </div>
     );
   }

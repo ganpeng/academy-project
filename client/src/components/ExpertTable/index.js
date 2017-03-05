@@ -10,7 +10,7 @@ class ExpertTable extends Component {
     const { experts } = this.props
 
     const expertsTable = experts.map((expert) => {
-      return <tr key={expert.id}><td>{expert.post}</td><td>{expert.name}</td><td>{expert.workplace}</td></tr>;
+      return <tr key={expert._id}><td>{expert.post}</td><td>{expert.name}</td><td>{expert.workplace}</td></tr>;
     })
 
     return (

@@ -2,13 +2,21 @@ import co from 'co';
 
 import Expert from '../models/expert';
 
+const LIMIT = 2;
 
 export function getExperts(req, res) {
   co(function*() {
-    const experts = yield Expert.find({}).exec();
+    let { page } = req.params;
+    const skip = (parseInt(page) - 1) * LIMIT;
+    const experts = yield Expert.find({}).skip(skip).limit(LIMIT).exec();
+    const totalExperts = yield Expert.find({}).count().exec();
+    const pages = Math.ceil(totalExperts / LIMIT);
+    const currentPage = parseInt(page);
     return res.json({
       success: 'ok',
       result: {
+        currentPage,
+        pages,
         experts
       }
     });

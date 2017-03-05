@@ -33,7 +33,7 @@ class Leader extends Component {
             })
           }
         </ul>
-        <Pagination {...leaderPagination} getLeaders={getLeaders} />
+        <Pagination {...leaderPagination} gotoPage={getLeaders} />
       </div>
     );
   }

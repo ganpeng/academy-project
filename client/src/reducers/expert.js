@@ -1,40 +1,12 @@
+import { SET_EXPERTS } from '../constants/';
 
-const initialState = [
-  {
-    id :1,
-    post: '常务委员',
-    name: '于红刚',
-    workplace: '武汉大学消化内科主任'
-  },
-  {
-    id :2,
-    post: '常务委员',
-    name: '于红刚',
-    workplace: '武汉大学消化内科主任'
-  },
-  {
-    id :3,
-    post: '常务委员',
-    name: '于红刚',
-    workplace: '武汉大学消化内科主任'
-  },
-  {
-    id :4,
-    post: '常务委员',
-    name: '于红刚',
-    workplace: '武汉大学消化内科主任'
-  },
-  {
-    id :5,
-    post: '常务委员',
-    name: '于红刚',
-    workplace: '武汉大学消化内科主任'
-  }
-]
+const initialState = [];
 
 
 export default (state = initialState, action = {}) => {
   switch(action.type) {
+    case SET_EXPERTS:
+      return action.experts;
     default:
       return state;
   }
