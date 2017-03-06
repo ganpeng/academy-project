@@ -19,9 +19,7 @@ class Constitution extends Component {
         <h2 className="title">
           <span>章程</span>
         </h2>
-        <div className="text">
-          {content}
-        </div>
+        <div className="text"  dangerouslySetInnerHTML={{__html: content}} />
       </div>
     );
   }
