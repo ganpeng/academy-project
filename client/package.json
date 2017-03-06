@@ -17,7 +17,9 @@
     "rucksack-css": "^0.9.1"
   },
   "dependencies": {
+    "antd": "^2.7.4",
     "axios": "^0.15.3",
+    "babel-polyfill": "^6.23.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-image-gallery": "^0.7.13",

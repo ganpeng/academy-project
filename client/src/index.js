@@ -1,3 +1,8 @@
+import 'babel-polyfill';
+import './utils/media.match.min.js';
+
+import 'antd/dist/antd.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
