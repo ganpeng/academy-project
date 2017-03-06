@@ -9,7 +9,7 @@ class AdminPage extends Component {
 
   render() {
     return (
-      <div className="">
+      <div className="admin">
         AdminPage
       </div>
     );
