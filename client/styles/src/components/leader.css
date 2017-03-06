@@ -2,8 +2,8 @@
 
 .leader {
   position:relative;
-  padding:16px;
-  padding-bottom:140px;
+  /* padding:16px; */
+  /* padding-bottom:140px; */
   background-color:$s-bg-color;
 }
 
@@ -12,8 +12,10 @@
   .leader-item {
     height:200px;
     margin-bottom:10px;
+    padding-right:10px;
     border:1px solid #ced3d9;
     overflow:hidden;
+    background-color:#fff;
     &:last-of-type {
       margin-bottom:0;
     }
@@ -27,6 +29,15 @@
     }
     .leader-info {
       overflow:hidden;
+      .leader-name {
+        color:$m-color;
+        font-size:18px;
+        line-height:32px;
+      }
+      .leader-desc {
+        color: #666;
+        text-indent:18px;
+      }
     }
   }
 }
