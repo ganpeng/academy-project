@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-import { SET_LEADERS } from '../constants/';
+import { SET_LEADERS, api_root } from '../constants/';
 import { updateLeaderPagination } from './pagination';
 
 export function getLeaders(page) {
   return dispatch => {
-    axios.get(`http://localhost:3001/leader/all/${page}`)
+    axios.get(`${api_root}/leader/all/${page}`)
       .then((res) => res.data)
       .then((data) => {
         const { leaders, currentPage, pages } = data.result;

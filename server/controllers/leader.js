@@ -8,6 +8,9 @@ const LIMIT = 2;
 export function getLeaders(req, res) {
   co(function*() {
     let { page } = req.params;
+    if (page == 0) {
+      page = 1
+    }
     const skip = (parseInt(page) - 1) * LIMIT;
     const leaders = yield Leader.find({}).skip(skip).limit(LIMIT).exec();
     const totalLeaders = yield Leader.find({}).count().exec();

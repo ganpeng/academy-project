@@ -7,6 +7,9 @@ const LIMIT = 2;
 export function getExperts(req, res) {
   co(function*() {
     let { page } = req.params;
+    if (page == 0) {
+      page = 1;
+    }
     const skip = (parseInt(page) - 1) * LIMIT;
     const experts = yield Expert.find({}).skip(skip).limit(LIMIT).exec();
     const totalExperts = yield Expert.find({}).count().exec();

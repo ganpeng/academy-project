@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-import { SET_EXPERTS } from '../constants/';
+import { SET_EXPERTS, api_root } from '../constants/';
 import { updateExpertPagination } from './pagination';
 
 export function getExperts(page) {
   return dispatch => {
-    axios.get(`http://localhost:3001/expert/all/${page}`)
+    axios.get(`${api_root}/expert/all/${page}`)
       .then((res) => res.data)
       .then((data) => {
         const { experts, currentPage, pages } = data.result;

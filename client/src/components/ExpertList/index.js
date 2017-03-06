@@ -16,6 +16,7 @@ class ExpertList extends Component {
   render() {
     const { experts, expertPagination, getExperts } = this.props;
     const { currentPage, pages } = expertPagination;
+    const len = experts.length;
 
     return (
       <div className="content-wrapper expert-list">
@@ -23,7 +24,9 @@ class ExpertList extends Component {
           <span>专家委员会名单</span>
         </h2>
         <ExpertTable experts={this.props.experts} />
-        <Pagination  currentPage={currentPage}  pages={pages} gotoPage={getExperts} />
+        {
+          len > 0 ? <Pagination  currentPage={currentPage}  pages={pages} gotoPage={getExperts} /> : null
+        }
       </div>
     );
   }

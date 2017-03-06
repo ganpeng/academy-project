@@ -13,13 +13,14 @@ class Constitution extends Component {
 
 
   render() {
+    const { content } = this.props.constitution ? this.props.constitution : { content: ''};
     return (
       <div className="content-wrapper constitution">
         <h2 className="title">
           <span>章程</span>
         </h2>
         <div className="text">
-          {this.props.constitution.content}
+          {content}
         </div>
       </div>
     );

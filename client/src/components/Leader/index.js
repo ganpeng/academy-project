@@ -16,6 +16,7 @@ class Leader extends Component {
 
   render() {
     const { leaders, leaderPagination, getLeaders } = this.props;
+    const len = leaders.length;
     return (
       <div className="content-wrapper leader">
         <ul className="leader-list">
@@ -33,7 +34,9 @@ class Leader extends Component {
             })
           }
         </ul>
-        <Pagination {...leaderPagination} gotoPage={getLeaders} />
+        {
+          len > 0 ? <Pagination {...leaderPagination} gotoPage={getLeaders} /> : null
+        }
       </div>
     );
   }

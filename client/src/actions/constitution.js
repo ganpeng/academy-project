@@ -1,15 +1,14 @@
 import axios from 'axios';
 
-import { SET_CONSTITUTION } from '../constants/';
+import { SET_CONSTITUTION, api_root } from '../constants/';
 
 
 export function getConstitution() {
   return dispatch => {
-    axios.get(`http://localhost:3001/constitution/all`)
+    axios.get(`${api_root}/constitution/all`)
       .then((res) => res.data)
       .then((data) => {
         const { constitution } = data.result;
-        console.log(constitution);
         dispatch(setConstitution(data.result.constitution));
       })
       .catch((err) => {

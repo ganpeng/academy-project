@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
+import Welcome from '../../components/Welcome/';
+
 class WelcomePage extends Component {
   static propTypes = {
     children: PropTypes.node,
@@ -9,9 +11,7 @@ class WelcomePage extends Component {
 
   render() {
     return (
-      <div className="welcome-container">
-        WelcomePage
-      </div>
+        <Welcome />
     );
   }
 }
