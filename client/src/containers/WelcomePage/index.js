@@ -11,7 +11,7 @@ class WelcomePage extends Component {
 
   render() {
     return (
-        <Welcome />
+      <Welcome />
     );
   }
 }

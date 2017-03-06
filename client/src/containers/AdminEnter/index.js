@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { Route } from 'react-router-dom';
 
-import FrontEnter from '../FrontEnter/';
+import AdminPage from '../AdminPage/';
 
-class App extends Component {
+class AdminEnter extends Component {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
@@ -12,11 +12,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app">
-        <FrontEnter />
+      <div className="">
+        <AdminPage />
       </div>
     );
   }
 }
 
-export default App;
+export default AdminEnter;
