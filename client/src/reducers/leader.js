@@ -9,10 +9,9 @@ export default (state = initialState, action = {}) => {
     case SET_LEADERS:
       return action.leaders;
     case DELETE_LEADER:
-      const index = findIndex(state, (leader) => leader._id == action.id);
-      console.log(index);
-      if (index > -1) {
-        const _state = [...state].splice(index, 1);
+      // const index = findIndex(state, (leader) => leader._id == action.id);
+      if (action.index > -1) {
+        const _state = [...state].splice(action.index, 1);
         return _state;
       }
       return  state;

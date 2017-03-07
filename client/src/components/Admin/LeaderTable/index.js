@@ -64,7 +64,12 @@ class LeaderTable extends Component {
 
   handleDelete(record, index) {
     const { _id: id } = record;
-    this.props.deleteLeaderRequest(id);
+    this.props.deleteLeaderRequest(id)
+      .then((data) => {
+        if (data.success == 'ok') {
+          this.props.deleteLeader(index);
+        }
+      })
   }
 
   handleUpdate(record, index) {

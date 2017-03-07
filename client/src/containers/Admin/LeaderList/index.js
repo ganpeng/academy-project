@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import { getLeaders, deleteLeaderRequest } from '../../../actions/leader';
+import { getLeaders, deleteLeaderRequest, deleteLeader } from '../../../actions/leader';
 import LeaderTable from '../../../components/Admin/LeaderTable/';
 import MyPagination from '../../../components/Admin/MyPagination/';
 
@@ -17,11 +17,11 @@ class LeaderList extends Component {
 
 
   render() {
-    const { leaders, getLeaders, pagination, deleteLeaderRequest } = this.props;
+    const { leaders, getLeaders, pagination, deleteLeaderRequest, deleteLeader } = this.props;
     const { currentPage, total } = pagination.leaderPagination;
     return (
       <div className="leader-list">
-        <LeaderTable dataSource={leaders} deleteLeaderRequest={deleteLeaderRequest} />
+        <LeaderTable dataSource={leaders} deleteLeaderRequest={deleteLeaderRequest} deleteLeader={deleteLeader} />
         <MyPagination getLeaders={getLeaders} currentPage={currentPage} total={total} />
       </div>
     );
@@ -39,4 +39,4 @@ function mapStatesToProps(state) {
 
 
 
-export default connect(mapStatesToProps, { getLeaders, deleteLeaderRequest })(LeaderList);
+export default connect(mapStatesToProps, { getLeaders, deleteLeaderRequest, deleteLeader })(LeaderList);

@@ -34,13 +34,6 @@ export function deleteLeaderRequest(id) {
   return dispatch => {
     return axios.delete(`${api_root}/leader/${id}`)
       .then((res) => res.data)
-      .then((data) => {
-        console.log(data);
-        if (data.success == 'ok') {
-          console.log('exec');
-          dispatch(deleteLeader(id));
-        }
-      })
       .catch((err) => {
         console.log(err);
       })
@@ -58,10 +51,17 @@ function setLeaders(leaders) {
 }
 
 
-function deleteLeader(id) {
+// export function deleteLeader(id) {
+//   return {
+//     type: DELETE_LEADER,
+//     id
+//   }
+// }
+
+export function deleteLeader(index) {
   return {
     type: DELETE_LEADER,
-    id
+    index
   }
 }
 
