@@ -21,6 +21,7 @@ export function getLeaders(req, res) {
       result: {
         currentPage,
         pages,
+        total: totalLeaders,
         leaders
       }
     });

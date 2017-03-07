@@ -20,6 +20,7 @@ export function getExperts(req, res) {
       result: {
         currentPage,
         pages,
+        total: totalExperts,
         experts
       }
     });

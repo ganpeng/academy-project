@@ -8,8 +8,8 @@ export function getExperts(page) {
     axios.get(`${api_root}/expert/all/${page}`)
       .then((res) => res.data)
       .then((data) => {
-        const { experts, currentPage, pages } = data.result;
-        dispatch(updateExpertPagination(currentPage, pages));
+        const { experts, currentPage, pages, total } = data.result;
+        dispatch(updateExpertPagination(currentPage, pages, total));
         dispatch(setExperts(experts))
       })
       .catch((err) => {

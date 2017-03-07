@@ -18,26 +18,26 @@ class SideMenu extends Component {
         >
           <SubMenu key="sub1" title={<span><Icon type="mail" /><span className="nav-text">专家</span></span>}>
             <Menu.Item key="1">
-              <Link to="/expertlist">创建专家</Link>
+              <Link to="/admin/expert">创建专家</Link>
             </Menu.Item>
             <Menu.Item key="2">
-              <Link to="/expertlist">专家列表</Link>
+              <Link to="/admin/expert/list">专家列表</Link>
             </Menu.Item>
           </SubMenu>
           <SubMenu key="sub2" title={<span><Icon type="appstore" /><span className="nav-text">章程</span></span>}>
             <Menu.Item key="3">
-              <Link to="/expertlist">创建章程</Link>
+              <Link to="/admin/constitution">创建章程</Link>
             </Menu.Item>
             <Menu.Item key="4">
-              <Link to="/expertlist">章程列表</Link>
+              <Link to="/admin/constitution/list">章程列表</Link>
             </Menu.Item>
           </SubMenu>
           <SubMenu key="sub4" title={<span><Icon type="setting" /><span className="nav-text">领导</span></span>}>
             <Menu.Item key="5">
-              <Link to="/expertlist">创建领导</Link>
+              <Link to="/admin/leader">创建领导</Link>
             </Menu.Item>
             <Menu.Item key="6">
-              <Link to="/expertlist">领导列表</Link>
+              <Link to="/admin/leader/list">领导列表</Link>
             </Menu.Item>
           </SubMenu>
           <SubMenu key="sub5" title={<span><Icon type="setting" /><span className="nav-text">轮播图</span></span>}>

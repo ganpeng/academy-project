@@ -6,7 +6,7 @@ import Footer from '../components/Footer/';
 
 import utils from './';
 
-export default (MyComponent) => {
+export const composeComponent =  function(MyComponent) {
 
   class CompseComponent extends Component {
     static propTypes = {

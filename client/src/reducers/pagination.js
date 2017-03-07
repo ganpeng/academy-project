@@ -10,10 +10,10 @@ const initialState = {
 export default (state = initialState, action = {}) => {
   switch(action.type) {
     case UPDATE_LEADER_PAGINATION:
-      const leaderPagination = {pages: action.pages, currentPage: action.currentPage};
+      const leaderPagination = {pages: action.pages, currentPage: action.currentPage, total: action.total};
       return _.merge(state, {leaderPagination});
     case UPDATE_EXPERT_PAGINATION:
-      const expertPagination = {pages: action.pages, currentPage: action.currentPage};
+      const expertPagination = {pages: action.pages, currentPage: action.currentPage, total: action.total};
       return _.merge(state, {expertPagination});
     default:
       return state;
