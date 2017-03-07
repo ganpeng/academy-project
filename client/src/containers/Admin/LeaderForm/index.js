@@ -6,6 +6,7 @@ const FormItem = Form.Item;
 
 
 import { createLeader } from '../../../actions/leader';
+import { api_root } from '../../../constants';
 
 
 class LeaderForm extends Component {
@@ -104,7 +105,7 @@ class LeaderForm extends Component {
                   getValueFromEvent: this.normFile,
                   rules: [{required: true, message: '请上传领导照片'}]
                 })(
-                  <Upload action="http://192.168.0.163:3001/imageupload" listType="picture" onChange={this.handleUpload}>
+                  <Upload action={`${api_root}/imageupload`} listType="picture" onChange={this.handleUpload}>
                     <Button>
                       <Icon type="upload" /> 上传照片
                     </Button>

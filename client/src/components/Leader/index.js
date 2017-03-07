@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
 import Pagination from '../Pagination/';
+import { api_root } from '../../constants/';
 
 
 class Leader extends Component {
@@ -24,7 +25,7 @@ class Leader extends Component {
             leaders.map((leader) => {
               return (
                 <li key={leader._id} className="leader-item">
-                  <img className="leader-img"  src={leader.image} alt="领导照片" />
+                  <img className="leader-img"  src={`${api_root}/${leader.image}`} alt="领导照片" />
                   <div className="leader-info">
                     <h3 className="leader-name">{leader.name}</h3>
                     <p className="leader-desc">{leader.desc}</p>

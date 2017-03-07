@@ -46,6 +46,10 @@ jspm_packages
 # production
 /build
 
+# static resource
+upload
+
+
 # misc
 .DS_Store
 .env

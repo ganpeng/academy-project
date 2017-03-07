@@ -11,7 +11,8 @@ export default (state = initialState, action = {}) => {
     case DELETE_LEADER:
       // const index = findIndex(state, (leader) => leader._id == action.id);
       if (action.index > -1) {
-        const _state = [...state].splice(action.index, 1);
+        const _state = [...state]
+          _state.splice(action.index, 1);
         return _state;
       }
       return  state;
