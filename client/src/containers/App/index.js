@@ -15,8 +15,8 @@ import LeaderPage from '../LeaderPage/';
 import AdminPage from '../Admin/AdminPage/';
 import AdminExpertCreatePage from '../Admin/AdminExpertCreatePage/';
 import AdminExpertListPage from '../Admin/AdminExpertListPage/';
-import ConstitutionForm from '../Admin/ConstitutionForm/';
-import ConstitutionList from '../Admin/ConstitutionList/';
+import AdminConstitutionPage from '../Admin/AdminConstitutionPage/';
+import AdminConstitutionListPage from '../Admin/AdminConstitutionListPage/';
 import LeaderForm from '../Admin/LeaderForm/';
 import LeaderList from '../Admin/LeaderList/';
 
@@ -45,8 +45,8 @@ class App extends Component {
         <Route exact={true} path="/admin/expert" component={adminComposeComponent(AdminExpertCreatePage)} />
         <Route path="/admin/expert/list" component={adminComposeComponent(AdminExpertListPage)} />
         <Route path="/admin/expert/update/:id" component={adminComposeComponent(AdminExpertCreatePage)} />
-        <Route exact={true} path="/admin/constitution" component={adminComposeComponent(ConstitutionForm)} />
-        <Route path="/admin/constitution/list" component={adminComposeComponent(ConstitutionList)} />
+        <Route exact={true} path="/admin/constitution" component={adminComposeComponent(AdminConstitutionPage)} />
+        <Route path="/admin/constitution/list" component={adminComposeComponent(AdminConstitutionListPage)} />
         <Route exact={true} path="/admin/leader" component={adminComposeComponent(LeaderForm)} />
         <Route path="/admin/leader/list" component={adminComposeComponent(LeaderList)} />
         <Route path="/admin/leader/update/:id" component={adminComposeComponent(LeaderForm)} />

@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-class ConstitutionList extends Component {
+class AdminConstitutionListPage extends Component {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
@@ -9,11 +9,11 @@ class ConstitutionList extends Component {
 
   render() {
     return (
-      <div className="constitution-list">
+      <div className="admin-constitution-list">
         Constitution List
       </div>
     );
   }
 }
 
-export default ConstitutionList;
+export default AdminConstitutionListPage;
