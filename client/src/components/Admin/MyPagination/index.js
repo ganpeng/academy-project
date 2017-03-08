@@ -8,10 +8,10 @@ class MyPagination extends Component {
   };
 
   render() {
-    const { currentPage, total, getLeaders } = this.props;
+    const { currentPage, total, gotoPage } = this.props;
     return (
       <div className="admin-pagination">
-        <Pagination current={currentPage} defaultCurrent={1} total={total} pageSize={2} defaultPageSize={2} onChange={(page) => getLeaders(page)} />
+        <Pagination current={currentPage} defaultCurrent={1} total={total} pageSize={2} defaultPageSize={2} onChange={(page) => gotoPage(page)} />
       </div>
     );
   }

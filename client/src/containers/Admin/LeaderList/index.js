@@ -22,7 +22,7 @@ class LeaderList extends Component {
     return (
       <div className="leader-list">
         <LeaderTable dataSource={leaders} deleteLeaderRequest={deleteLeaderRequest} deleteLeader={deleteLeader} />
-        <MyPagination getLeaders={getLeaders} currentPage={currentPage} total={total} />
+        <MyPagination gotoPage={getLeaders} currentPage={currentPage} total={total} />
       </div>
     );
   }
