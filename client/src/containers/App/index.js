@@ -19,7 +19,8 @@ import AdminConstitutionPage from '../Admin/AdminConstitutionPage/';
 import AdminConstitutionListPage from '../Admin/AdminConstitutionListPage/';
 import LeaderForm from '../Admin/LeaderForm/';
 import LeaderList from '../Admin/LeaderList/';
-
+import AdminLoginPage from '../Admin/AdminLoginPage/';
+import AdminSignUpPage from '../Admin/AdminSignUpPage/';
 
 
 
@@ -50,6 +51,8 @@ class App extends Component {
         <Route exact={true} path="/admin/leader" component={adminComposeComponent(LeaderForm)} />
         <Route path="/admin/leader/list" component={adminComposeComponent(LeaderList)} />
         <Route path="/admin/leader/update/:id" component={adminComposeComponent(LeaderForm)} />
+        <Route path="/admin/login" component={AdminLoginPage} />
+        <Route path="/admin/signup" component={AdminSignUpPage} />
       </div>
     );
   }

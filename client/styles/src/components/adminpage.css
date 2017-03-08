@@ -5,3 +5,21 @@
     float:right;
   }
 }
+
+
+.admin-login {
+  position:relative;
+  height:100%;
+  .admin-login-form {
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:400px;
+    height:400px;
+    padding:100px 0;
+    border-radius:8px;
+    transform:translate(-50%, -50%);
+    background-color: #fff;
+  }
+}
+
