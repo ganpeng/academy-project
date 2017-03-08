@@ -48,6 +48,7 @@ class App extends Component {
         <Route path="/admin/constitution/list" component={adminComposeComponent(ConstitutionList)} />
         <Route exact={true} path="/admin/leader" component={adminComposeComponent(LeaderForm)} />
         <Route path="/admin/leader/list" component={adminComposeComponent(LeaderList)} />
+        <Route path="/admin/leader/update/:id" component={adminComposeComponent(LeaderForm)} />
       </div>
     );
   }

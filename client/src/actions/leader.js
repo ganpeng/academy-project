@@ -41,6 +41,16 @@ export function deleteLeaderRequest(id) {
 }
 
 
+export function updateLeaderRequest(id, leader) {
+  return dispatch => {
+    return axios.put(`${api_root}/leader/${id}`, leader)
+      .then((res) => res.data)
+      .catch((err) => {
+        console.log(err);
+      })
+  }
+}
+
 
 
 function setLeaders(leaders) {

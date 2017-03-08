@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Menu, Icon, Switch } from 'antd';
+import { Menu, Icon } from 'antd';
 import { Link } from 'react-router-dom';
 const SubMenu = Menu.SubMenu;
 

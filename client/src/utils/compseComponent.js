@@ -45,7 +45,7 @@ export const composeComponent =  function(MyComponent) {
         <div>
           <Header />
           <div id="content" style={{minHeight: this.state.contentHeight}}>
-            <MyComponent />
+            <MyComponent {...this.props} />
           </div>
           <Footer />
         </div>

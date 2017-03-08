@@ -1,27 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Table, Button } from 'antd';
+import { Link } from 'react-router-dom';
 
-
-// const dataSource = [
-//   {
-//     key: 1,
-//     name: '东东',
-//     desc: '这是东东的简介',
-//     createdAt: '2015-06-11'
-//   },
-//   {
-//     key: 2,
-//     name: '嘻嘻',
-//     desc: '这是嘻嘻的简介',
-//     createdAt: '2015-06-11'
-//   },
-//   {
-//     key: 3,
-//     name: '小丸子',
-//     desc: '这是小丸子的简介',
-//     createdAt: '2015-06-11'
-//   }
-// ]
 
 
 class LeaderTable extends Component {
@@ -54,7 +34,9 @@ class LeaderTable extends Component {
           return <span>
                   <Button type="danger" onClick={this.handleDelete.bind(this, record, index)}>删除</Button>
                   &nbsp;&nbsp;
-                  <Button type="primary" onClick={this.handleUpdate.bind(this, record, index)}>修改</Button>
+                  <Button type="primary">
+                    <Link to={`/admin/leader/update/${record._id}`}>修改</Link>
+                  </Button>
                 </span>
         }
       }
@@ -66,7 +48,7 @@ class LeaderTable extends Component {
     const { _id: id } = record;
     this.props.deleteLeaderRequest(id)
       .then((data) => {
-        if (data.success == 'ok') {
+        if (data.success === 'ok') {
           this.props.deleteLeader(index);
         }
       })

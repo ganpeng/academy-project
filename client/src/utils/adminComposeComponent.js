@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import { Layout } from 'antd';
 const { Header, Content, Footer, Sider } = Layout;
 
 import SideMenu from '../components/SideMenu/';
@@ -44,7 +44,7 @@ export default (MyComponent) => {
               <Header style={styles.header} />
               <Content style={styles.content}>
                 <div style={{ padding: 24, background: '#fff', minHeight: 460 }}>
-                  <MyComponent />
+                  <MyComponent {...this.props} />
                 </div>
               </Content>
               <Footer style={styles.footer}>
