@@ -68,6 +68,7 @@ export default (MyComponent) => {
                       <Header style={styles.header}>
                         <div className="admin-show-username">
                           <span className="username">
+                            管理员&nbsp;
                             {user.data ? user.data.username : null}
                           </span>
                           <Button type="danger" onClick={this.handleLogout.bind(this)}>退出登录</Button>
