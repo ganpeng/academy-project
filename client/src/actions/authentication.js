@@ -2,6 +2,7 @@ import axios from 'axios';
 import jwtDecode from 'jwt-decode';
 
 import { SET_USER, api_root } from '../constants/';
+import setAuthorizationHeader from '../utils/setAuthorizationHeader';
 
 
 
@@ -34,6 +35,7 @@ export function loginRequest(user) {
 
 export function setUser(token) {
   let user;
+  setAuthorizationHeader(token);
   if(token) {
     localStorage.setItem('token', token);
     user = jwtDecode(token);
