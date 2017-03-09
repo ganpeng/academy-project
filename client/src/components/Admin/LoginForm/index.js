@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button, message } from 'antd';
 import { Link } from 'react-router-dom';
 const FormItem = Form.Item;
 
@@ -33,7 +33,7 @@ class LoginForm extends Component {
                 this.props.setUser(data.token);
                 this.props.redirect(true);
               } else {
-                alert(`${data.message}`);
+                message.error(`${data.message}`, 2.5);
               }
             })
         }
