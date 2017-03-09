@@ -1,3 +1,5 @@
+@import './_variable.css';
+
 #admin-page {
   height:100%;
   .admin-pagination {
@@ -7,10 +9,20 @@
 }
 
 
-.admin-login {
+.admin-show-username {
+  float:right;
+  margin-right:100px;
+  .username {
+    margin-right:20px;
+  }
+}
+
+
+.admin-login, .admin-signup {
   position:relative;
   height:100%;
-  .admin-login-form {
+  background-color:$m-color;
+  .admin-login-form, .admin-signup-form {
     position:absolute;
     top:50%;
     left:50%;
@@ -20,6 +32,11 @@
     border-radius:8px;
     transform:translate(-50%, -50%);
     background-color: #fff;
+  }
+  .admin-login-title, .admin-signup-title {
+    text-align:center;
+    line-height: 40px;
+    color: $m-color;
   }
 }
 

@@ -4,13 +4,15 @@ import experts from './expert';
 import leaders from './leader';
 import pagination from './pagination';
 import constitution from './constitution';
+import authentication from './authentication';
 
 
 const rootReducer = combineReducers({
   experts,
   leaders,
   pagination,
-  constitution
+  constitution,
+  authentication
 });
 
 export default rootReducer;

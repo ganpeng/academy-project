@@ -5,6 +5,7 @@ import { v4 } from 'uuid';
 import leader from './leader';
 import expert from './expert';
 import constitution from './constitution';
+import auth from './auth';
 
 
 const storage = multer.diskStorage({
@@ -22,6 +23,7 @@ const upload = multer({storage});
 
 export default (app) => {
 
+  app.use('/auth', auth);
   app.use('/leader', leader);
   app.use('/expert', expert);
   app.use('/constitution', constitution);

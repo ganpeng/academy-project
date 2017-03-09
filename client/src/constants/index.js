@@ -5,8 +5,9 @@ export const SET_EXPERTS = 'SET_EXPERTS';
 export const DELETE_EXPERT = 'DELETE_EXPERT';
 export const UPDATE_EXPERT_PAGINATION = 'UPDATE_EXPERT_PAGINATION';
 export const SET_CONSTITUTION = 'SET_CONSTITUTION';
+export const SET_USER = 'SET_USER';
 
 
 
-// export const api_root = 'http://192.168.0.163:3001';
-export const api_root = 'http://localhost:3001';
+export const api_root = 'http://192.168.0.163:3001';
+// export const api_root = 'http://localhost:3001';

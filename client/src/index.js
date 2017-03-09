@@ -8,21 +8,28 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
-
 import App from './containers/App/';
 import genStore from './store/'
 import utils from './utils/'
+import { setUser } from './actions/authentication';
 
+import '../styles/dist/index.css';
+
+const store = genStore();
+
+const token = localStorage.getItem('token');
+
+
+if (token) {
+  store.dispatch(setUser(token));
+}
 
 utils.getContentHeight()
 
 
-
-import '../styles/dist/index.css';
-
 ReactDOM.render(
   <BrowserRouter>
-    <Provider store={genStore()}>
+    <Provider store={store}>
       <App />
     </Provider>
   </BrowserRouter>,

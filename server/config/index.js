@@ -1,3 +1,4 @@
 export default {
-  db: 'mongodb://localhost/academy'
+  db: 'mongodb://localhost/academy',
+  mySecret: 'jsonwebtokensecretkey'
 }
