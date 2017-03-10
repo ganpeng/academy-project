@@ -1,11 +1,4 @@
-import React, { Component, PropTypes, RichUtils } from 'react';
-import { convertToRaw, EditorState, ContentState } from 'draft-js';
-import { Button, message } from 'antd';
-import { connect } from 'react-redux';
-import draftToHtml from 'draftjs-to-html';
-import isEmpty from 'lodash/isEmpty';
-
-import { createConstitutionRequest, getConstitution, updateConstitutionRequest } from '../../../actions/constitution';
+import React, { Component, PropTypes } from 'react';
 
 import MyCreateEditor from '../../../components/Admin/MyCreateEditor/';
 
@@ -15,10 +8,6 @@ class AdminConstitutionPage extends Component {
     children: PropTypes.node,
     className: PropTypes.string,
   };
-
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (

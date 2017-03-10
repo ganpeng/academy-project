@@ -1,8 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import { convertToRaw, EditorState, ContentState } from 'draft-js';
+import { convertToRaw, EditorState } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
 import draftToHtml from 'draftjs-to-html';
-import htmlToDraft from 'html-to-draftjs';
 import { Button, message } from 'antd';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
