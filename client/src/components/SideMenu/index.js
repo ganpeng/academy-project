@@ -42,9 +42,12 @@ class SideMenu extends Component {
                      <Link to="/admin/constitution">创建章程</Link>
                 </Menu.Item>
               }
-            <Menu.Item key="4">
-              <Link to="/admin/constitution/list">修改章程</Link>
-            </Menu.Item>
+              {
+                constitution &&
+                  <Menu.Item key="4">
+                    <Link to="/admin/constitution/list">修改章程</Link>
+                  </Menu.Item>
+              }
           </SubMenu>
           <SubMenu key="sub4" title={<span><Icon type="setting" /><span className="nav-text">领导</span></span>}>
             <Menu.Item key="5">

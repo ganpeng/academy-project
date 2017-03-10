@@ -5,6 +5,7 @@ import draftToHtml from 'draftjs-to-html';
 import htmlToDraft from 'html-to-draftjs';
 import { Button, message } from 'antd';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 
@@ -19,7 +20,8 @@ class MyCreateEditor extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      editorContent: EditorState.createEmpty()
+      editorContent: EditorState.createEmpty(),
+      redirect: false
     }
 
     this.handleSave = this.handleSave.bind(this);
@@ -39,6 +41,9 @@ class MyCreateEditor extends Component {
         .then((data) => {
           if (data.success === 'ok') {
             message.success('创建成功');
+            this.setState({
+              redirect: true
+            })
           }
         })
     }
@@ -46,21 +51,27 @@ class MyCreateEditor extends Component {
 
 
   render() {
-    const { editorContent } = this.state;
+    const { editorContent, redirect } = this.state;
 
     return (
       <div className="my-editor">
-        <Editor
-          toolbarClassName="home-toolbar"
-          wrapperClassName="home-wrapper"
-          wrapperStyle={{height:'300px'}}
-          editorClassName="home-editor"
-          placeholder="hello"
-          hashtag={{}}
-          editorState={editorContent}
-          onEditorStateChange={this.onEditorStateChange.bind(this)}
-        />
-        <Button type="primary" style={{marginTop: '100px'}} onClick={this.handleSave}>保存</Button>
+        {
+          redirect
+            ? <Redirect to="/admin/constitution/list" />
+            : (<div>
+                  <Editor
+                    toolbarClassName="home-toolbar"
+                    wrapperClassName="home-wrapper"
+                    wrapperStyle={{height:'300px'}}
+                    editorClassName="home-editor"
+                    placeholder="hello"
+                    hashtag={{}}
+                    editorState={editorContent}
+                    onEditorStateChange={this.onEditorStateChange.bind(this)}
+                  />
+                  <Button type="primary" style={{marginTop: '100px'}} onClick={this.handleSave}>保存</Button>
+              </div>)
+        }
       </div>
     );
   }

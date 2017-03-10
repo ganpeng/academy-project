@@ -20,11 +20,6 @@ class AdminConstitutionPage extends Component {
     super(props);
   }
 
-
-  componentDidMount() {
-    this.props.getConstitution();
-  }
-
   render() {
     return (
       <div className="admin-constitution">
