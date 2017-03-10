@@ -3,14 +3,13 @@ import axios from 'axios';
 import { SET_CONSTITUTION, api_root } from '../constants/';
 
 
-export function getConstitution(cb) {
+export function getConstitution() {
   return dispatch => {
     axios.get(`${api_root}/constitution/all`)
       .then((res) => res.data)
       .then((data) => {
         const { constitution } = data.result;
         dispatch(setConstitution(constitution));
-        cb && cb(constitution);
       })
       .catch((err) => {
         console.log(err);

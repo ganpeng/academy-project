@@ -1,6 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import { Menu, Icon } from 'antd';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import { getConstitution } from '../../actions/constitution';
+
+
 const SubMenu = Menu.SubMenu;
 
 class SideMenu extends Component {
@@ -9,7 +14,13 @@ class SideMenu extends Component {
     className: PropTypes.string,
   };
 
+  componentDidMount() {
+    this.props.getConstitution();
+  }
+
+
   render() {
+    const { constitution } = this.props;
     return (
       <div className="side-menu">
         <Menu
@@ -25,11 +36,14 @@ class SideMenu extends Component {
             </Menu.Item>
           </SubMenu>
           <SubMenu key="sub2" title={<span><Icon type="appstore" /><span className="nav-text">章程</span></span>}>
-            <Menu.Item key="3">
-              <Link to="/admin/constitution">创建章程</Link>
-            </Menu.Item>
+              {
+                !constitution &&
+                <Menu.Item key="3">
+                     <Link to="/admin/constitution">创建章程</Link>
+                </Menu.Item>
+              }
             <Menu.Item key="4">
-              <Link to="/admin/constitution/list">章程列表</Link>
+              <Link to="/admin/constitution/list">修改章程</Link>
             </Menu.Item>
           </SubMenu>
           <SubMenu key="sub4" title={<span><Icon type="setting" /><span className="nav-text">领导</span></span>}>
@@ -54,4 +68,12 @@ class SideMenu extends Component {
   }
 }
 
-export default SideMenu;
+
+function mapStatesToProps(state) {
+  return {
+    constitution: state.constitution
+  }
+}
+
+
+export default connect(mapStatesToProps, {getConstitution})(SideMenu);

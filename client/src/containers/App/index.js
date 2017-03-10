@@ -30,7 +30,6 @@ class App extends Component {
     className: PropTypes.string,
   };
 
-
   render() {
     return (
       <div className="app">

@@ -8,9 +8,9 @@ import { connect } from 'react-redux';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 
-import { createConstitutionRequest, updateConstitutionRequest } from '../../../actions/constitution';
+import { getConstitution, updateConstitutionRequest } from '../../../actions/constitution';
 
-class MyEditor extends Component {
+class MyUpdateEditor extends Component {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
@@ -22,23 +22,27 @@ class MyEditor extends Component {
       editorContent: EditorState.createEmpty()
     }
 
-    this.handleSave = this.handleSave.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
   }
 
+  componentDidMount() {
+    this.props.getConstitution();
+  }
 
   onEditorStateChange(editorContent) {
     this.setState({editorContent});
   }
 
 
-  handleSave() {
+  handleUpdate() {
     const { editorContent } = this.state;
+    const { _id } = this.props.constitution;
     if (editorContent) {
       const htmlStr = draftToHtml(convertToRaw(editorContent.getCurrentContent()));
-      this.props.createConstitutionRequest({content: htmlStr})
+      this.props.updateConstitutionRequest(_id, {content: htmlStr})
         .then((data) => {
           if (data.success === 'ok') {
-            message.success('创建成功');
+            message.success('修改成功');
           }
         })
     }
@@ -63,7 +67,6 @@ class MyEditor extends Component {
 
   render() {
     const { editorContent } = this.state;
-    console.log(this.props);
 
     return (
       <div className="my-editor">
@@ -77,7 +80,7 @@ class MyEditor extends Component {
           editorState={editorContent}
           onEditorStateChange={this.onEditorStateChange.bind(this)}
         />
-        <Button type="primary" style={{marginTop: '100px'}} onClick={() => this.props.handleClick(this.state.editorContent) }>保存</Button>
+        <Button type="primary" style={{marginTop: '100px'}} onClick={this.handleUpdate}>修改</Button>
       </div>
     );
   }
@@ -93,4 +96,4 @@ function mapStatesToProps(state) {
 
 
 
-export default connect(mapStatesToProps, {createConstitutionRequest, updateConstitutionRequest})(MyEditor);
+export default connect(mapStatesToProps, {getConstitution, updateConstitutionRequest})(MyUpdateEditor);

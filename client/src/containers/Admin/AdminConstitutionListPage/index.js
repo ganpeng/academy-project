@@ -1,4 +1,8 @@
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { getConstitution } from '../../../actions/constitution';
+
+import MyUpdateEditor from '../../../components/Admin/MyUpdateEditor/';
 
 class AdminConstitutionListPage extends Component {
   static propTypes = {
@@ -6,14 +10,17 @@ class AdminConstitutionListPage extends Component {
     className: PropTypes.string,
   };
 
-
   render() {
+    const { constitution } = this.props;
+    console.log(constitution);
     return (
       <div className="admin-constitution-list">
-        Constitution List
+        <MyUpdateEditor />
       </div>
     );
   }
 }
+
+
 
 export default AdminConstitutionListPage;

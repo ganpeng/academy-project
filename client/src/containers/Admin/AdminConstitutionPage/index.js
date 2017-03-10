@@ -1,11 +1,13 @@
 import React, { Component, PropTypes, RichUtils } from 'react';
-import { Button } from 'antd';
+import { convertToRaw, EditorState, ContentState } from 'draft-js';
+import { Button, message } from 'antd';
 import { connect } from 'react-redux';
+import draftToHtml from 'draftjs-to-html';
 import isEmpty from 'lodash/isEmpty';
 
 import { createConstitutionRequest, getConstitution, updateConstitutionRequest } from '../../../actions/constitution';
 
-import MyEditor from '../../../components/Admin/MyEditor/';
+import MyCreateEditor from '../../../components/Admin/MyCreateEditor/';
 
 
 class AdminConstitutionPage extends Component {
@@ -16,30 +18,22 @@ class AdminConstitutionPage extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      show: false
-    }
   }
 
 
+  componentDidMount() {
+    this.props.getConstitution();
+  }
+
   render() {
-    const { constitution, createConstitutionRequest, getConstitution } = this.props;
     return (
       <div className="admin-constitution">
-        <MyEditor />
+        <MyCreateEditor />
       </div>
     );
   }
 }
 
 
-function mapStatesToProps(state) {
-  return {
-    constitution: state.constitution
-  }
-}
 
-
-
-
-export default connect(mapStatesToProps, { createConstitutionRequest, getConstitution, updateConstitutionRequest })(AdminConstitutionPage);
+export default AdminConstitutionPage;

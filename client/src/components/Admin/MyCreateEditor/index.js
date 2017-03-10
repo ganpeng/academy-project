@@ -8,9 +8,9 @@ import { connect } from 'react-redux';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 
-import { createConstitutionRequest, updateConstitutionRequest } from '../../../actions/constitution';
+import { createConstitutionRequest } from '../../../actions/constitution';
 
-class MyEditor extends Component {
+class MyCreateEditor extends Component {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
@@ -45,25 +45,8 @@ class MyEditor extends Component {
   }
 
 
-  componentWillReceiveProps(nextProps) {
-    const { constitution } = nextProps;
-    if (constitution) {
-      const { content } = constitution;
-      const blocksFromHtml = htmlToDraft(content);
-      const contentBlocks = blocksFromHtml.contentBlocks;
-      const contentState = ContentState.createFromBlockArray(contentBlocks);
-      const editorState = EditorState.createWithContent(contentState);
-
-      this.setState({
-        editorContent: editorState
-      })
-    }
-  }
-
-
   render() {
     const { editorContent } = this.state;
-    console.log(this.props);
 
     return (
       <div className="my-editor">
@@ -77,7 +60,7 @@ class MyEditor extends Component {
           editorState={editorContent}
           onEditorStateChange={this.onEditorStateChange.bind(this)}
         />
-        <Button type="primary" style={{marginTop: '100px'}} onClick={() => this.props.handleClick(this.state.editorContent) }>保存</Button>
+        <Button type="primary" style={{marginTop: '100px'}} onClick={this.handleSave}>保存</Button>
       </div>
     );
   }
@@ -93,4 +76,4 @@ function mapStatesToProps(state) {
 
 
 
-export default connect(mapStatesToProps, {createConstitutionRequest, updateConstitutionRequest})(MyEditor);
+export default connect(mapStatesToProps, {createConstitutionRequest})(MyCreateEditor);
