@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import { Layout, Button } from 'antd';
-import { Redirect } from 'react-router-dom';
+import { Layout, Button, Icon } from 'antd';
+import { Redirect, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -61,7 +61,11 @@ export default (MyComponent) => {
                     style={styles.layout}
                   >
                     <Sider>
-                      <div className="logo" style={{height:"100px"}} />
+                      <div className="logo" style={{height:"100px", position: "relative"}}>
+                        <Link to="/">
+                          <Icon type="home" style={{color: "#fff", fontSize: "40px",position: "absolute", top: "50%", left: "50%", marginTop: "-20px", marginLeft: "-20px", cursor: "pointer"}}/>
+                        </Link>
+                      </div>
                       <SideMenu />
                     </Sider>
                     <Layout>
