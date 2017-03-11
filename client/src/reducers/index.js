@@ -5,6 +5,7 @@ import leaders from './leader';
 import pagination from './pagination';
 import constitution from './constitution';
 import authentication from './authentication';
+import carousels from './carousel';
 
 
 const rootReducer = combineReducers({
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   leaders,
   pagination,
   constitution,
+  carousels,
   authentication
 });
 

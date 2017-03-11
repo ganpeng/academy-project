@@ -59,10 +59,10 @@ class SideMenu extends Component {
           </SubMenu>
           <SubMenu key="sub5" title={<span><Icon type="setting" /><span className="nav-text">轮播图</span></span>}>
             <Menu.Item key="7">
-              <Link to="/expertlist">添加轮播图</Link>
+              <Link to="/admin/carousel">添加轮播图</Link>
             </Menu.Item>
             <Menu.Item key="8">
-              <Link to="/expertlist">轮播图列表</Link>
+              <Link to="/admin/carousel/list">轮播图列表</Link>
             </Menu.Item>
           </SubMenu>
         </Menu>

@@ -15,6 +15,8 @@ import LeaderPage from '../LeaderPage/';
 import AdminPage from '../Admin/AdminPage/';
 import AdminExpertCreatePage from '../Admin/AdminExpertCreatePage/';
 import AdminExpertListPage from '../Admin/AdminExpertListPage/';
+import AdminCarouselCreatePage from '../Admin/AdminCarouselCreatePage/';
+import AdminCarouselListPage from '../Admin/AdminCarouselListPage/';
 import AdminConstitutionPage from '../Admin/AdminConstitutionPage/';
 import AdminConstitutionListPage from '../Admin/AdminConstitutionListPage/';
 import LeaderForm from '../Admin/LeaderForm/';
@@ -50,6 +52,9 @@ class App extends Component {
         <Route exact={true} path="/admin/leader" component={adminComposeComponent(LeaderForm)} />
         <Route path="/admin/leader/list" component={adminComposeComponent(LeaderList)} />
         <Route path="/admin/leader/update/:id" component={adminComposeComponent(LeaderForm)} />
+        <Route exact={true} path="/admin/carousel" component={adminComposeComponent(AdminCarouselCreatePage)} />
+        <Route path="/admin/carousel/list" component={adminComposeComponent(AdminCarouselListPage)} />
+        <Route path="/admin/carousel/update/:id" component={adminComposeComponent(AdminCarouselCreatePage)} />
         <Route path="/admin/login" component={AdminLoginPage} />
         <Route path="/admin/signup" component={AdminSignUpPage} />
       </div>
