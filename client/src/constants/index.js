@@ -14,5 +14,5 @@ export const SET_USER = 'SET_USER';
 
 
 // export const api_root = 'http://192.168.0.163:3001';
-export const api_root = 'http://localhost:3001';
-// export const api_root = 'http://45.119.98.63:3001';
+// export const api_root = 'http://localhost:3001';
+export const api_root = 'http://45.119.98.63:3001';
