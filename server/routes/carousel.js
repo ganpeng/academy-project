@@ -7,6 +7,7 @@ const router = express.Router();
 
 
 router.get('/all/:page', Carousel.getCarousels);
+router.get('/show', Carousel.getShowCarousels);
 router.get('/:id', Carousel.getCarousel);
 router.post('/', Carousel.addCarousel);
 router.put('/:id', Carousel.updateCarousel);

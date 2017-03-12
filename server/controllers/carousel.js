@@ -47,6 +47,29 @@ export function getCarousel(req, res) {
   })
 }
 
+
+export function getShowCarousels(req, res) {
+  co(function*() {
+    const carousels = yield Carousel.find({
+      show: true
+    }).exec();
+    return res.json({
+      success: 'ok',
+      result: {
+        carousels
+      }
+    });
+
+  }).catch((err) => {
+    console.log(err);
+  })
+}
+
+
+
+
+
+
 export function addCarousel(req, res) {
   co(function* () {
     const carousel = req.body;
@@ -99,7 +122,8 @@ export default {
   getCarousels,
   addCarousel,
   updateCarousel,
-  deleteCarousel
+  deleteCarousel,
+  getShowCarousels
 }
 
 

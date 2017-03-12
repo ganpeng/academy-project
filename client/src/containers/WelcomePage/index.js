@@ -1,6 +1,9 @@
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 
 import Welcome from '../../components/Welcome/';
+import { getShowCarousels } from '../../actions/carousel';
+import { api_root } from '../../constants/';
 
 class WelcomePage extends Component {
   static propTypes = {
@@ -8,12 +11,37 @@ class WelcomePage extends Component {
     className: PropTypes.string,
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      showCarousels: []
+    }
+  }
+
+  componentDidMount() {
+    this.props.getShowCarousels()
+      .then((data) => {
+        if (data.success === 'ok') {
+          const showCarousels = data.result.carousels.map((carousel) => {
+            return {
+              original: `${api_root}/${carousel.image}`
+            }
+          })
+
+          this.setState({showCarousels})
+        }
+      })
+  }
+
+
 
   render() {
+    const { showCarousels } = this.state;
     return (
-      <Welcome />
+      <Welcome images={showCarousels} />
     );
   }
 }
 
-export default WelcomePage;
+
+export default connect(null, { getShowCarousels })(WelcomePage);

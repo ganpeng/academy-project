@@ -21,6 +21,18 @@ export function getCarousels(page) {
   }
 }
 
+export function getShowCarousels() {
+  return dipatch => {
+    return axios.get(`${api_root}/carousel/show`)
+      .then((res) => res.data)
+      .catch((err) => {
+        console.log(err);
+      })
+  }
+}
+
+
+
 
 export function createCarousel(carousel) {
   return dispatch => {
