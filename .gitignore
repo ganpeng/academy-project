@@ -48,7 +48,7 @@ jspm_packages
 
 # static resource
 upload
-build
+# build
 
 
 # misc
