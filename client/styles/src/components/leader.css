@@ -9,6 +9,7 @@
 
 
 .leader-list {
+  overflow:hidden;
   .leader-item {
     height:200px;
     margin-bottom:10px;
