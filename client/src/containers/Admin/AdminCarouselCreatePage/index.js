@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Form, Input, Button, Upload, Icon } from 'antd';
+import { Form, Button, Upload, Icon } from 'antd';
 
 
 import { createCarousel } from '../../../actions/carousel';

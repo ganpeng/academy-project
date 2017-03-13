@@ -84,7 +84,7 @@ export default (MyComponent) => {
                         </div>
                       </Content>
                       <Footer style={styles.footer}>
-                        Ant Design ©2016 Created by Ant UED
+                        &copy;2017&nbsp;华医消化内镜研究院
                       </Footer>
                     </Layout>
                   </Layout>
