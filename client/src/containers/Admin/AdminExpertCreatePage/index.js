@@ -145,7 +145,7 @@ class AdminExpertCreatePage extends Component {
           >
             {
               getFieldDecorator('name', {
-                rules: [{required: true, message: '请填写领导名称'}]
+                rules: [{required: true, message: '请填写专家姓名'}]
               })(
                 <Input placeholder="请输入专家姓名" />
               )
@@ -157,7 +157,7 @@ class AdminExpertCreatePage extends Component {
           >
             {
               getFieldDecorator('post', {
-                rules: [{required: true, message: '请填写领导简介'}]
+                rules: [{required: true, message: '请填写委员会职务'}]
               })(
                 <Input placeholder="请输入委员会职务" />
               )
@@ -169,7 +169,7 @@ class AdminExpertCreatePage extends Component {
           >
             {
               getFieldDecorator('workplace', {
-                rules: [{required: true, message: '请上传领导照片'}]
+                rules: [{required: true, message: '请填写工作单位'}]
               })(
                 <Input placeholder="请输入工作单位" />
               )
