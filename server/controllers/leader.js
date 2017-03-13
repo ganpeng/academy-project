@@ -2,7 +2,7 @@ import co from 'co';
 
 import Leader from '../models/leader';
 
-const LIMIT = 2;
+const LIMIT = 10;
 
 
 export function getLeaders(req, res) {

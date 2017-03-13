@@ -2,7 +2,7 @@ import co from 'co';
 
 import Carousel from '../models/carousel';
 
-const LIMIT = 2;
+const LIMIT = 10;
 
 
 export function getCarousels(req, res) {

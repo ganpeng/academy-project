@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { Pagination } from 'antd';
 
+const PAGESIZE = 10;
+
 class MyPagination extends Component {
   static propTypes = {
     children: PropTypes.node,
@@ -11,7 +13,7 @@ class MyPagination extends Component {
     const { currentPage, total, gotoPage } = this.props;
     return (
       <div className="admin-pagination">
-        <Pagination current={currentPage} defaultCurrent={1} total={total} pageSize={2} defaultPageSize={2} onChange={(page) => gotoPage(page)} />
+        <Pagination current={currentPage} defaultCurrent={1} total={total} pageSize={PAGESIZE} defaultPageSize={PAGESIZE} onChange={(page) => gotoPage(page)} />
       </div>
     );
   }

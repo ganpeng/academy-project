@@ -20,7 +20,7 @@ class LeaderList extends Component {
     const { leaders, getLeaders, pagination, deleteLeaderRequest, deleteLeader } = this.props;
     const { currentPage, total } = pagination.leaderPagination;
     return (
-      <div className="leader-list">
+      <div className="leader-list" style={{minHeight: "460px"}}>
         <LeaderTable dataSource={leaders} deleteLeaderRequest={deleteLeaderRequest} deleteLeader={deleteLeader} />
         <MyPagination gotoPage={getLeaders} currentPage={currentPage} total={total} />
       </div>

@@ -2,7 +2,7 @@ import co from 'co';
 
 import Expert from '../models/expert';
 
-const LIMIT = 2;
+const LIMIT = 10;
 
 export function getExperts(req, res) {
   co(function*() {

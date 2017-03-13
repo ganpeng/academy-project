@@ -20,7 +20,7 @@ class AdminExpertListPage extends Component {
     const { experts, getExperts, pagination, deleteExpertRequest, deleteExpert } = this.props;
     const { currentPage, total } = pagination.expertPagination;
     return (
-      <div className="leader-list">
+      <div className="leader-list" style={{minHeight: "460px"}}>
         <ExpertTable dataSource={experts} deleteExpertRequest={deleteExpertRequest} deleteExpert={deleteExpert} />
         <MyPagination gotoPage={getExperts} currentPage={currentPage} total={total} />
       </div>

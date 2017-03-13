@@ -20,7 +20,7 @@ class AdminCarouselListPage extends Component {
     const { carousels, getCarousels, pagination, deleteCarouselRequest, deleteCarousel, updateCarousel, updateCarouselRequest } = this.props;
     const { currentPage, total } = pagination.carouselPagination;
     return (
-      <div className="admin-carousel-list">
+      <div className="admin-carousel-list" style={{minHeight:"460px"}}>
         <CarouselTable dataSource={carousels} deleteCarouselRequest={deleteCarouselRequest} deleteCarousel={deleteCarousel} updateCarouselRequest={updateCarouselRequest} updateCarousel={updateCarousel} />
         <MyPagination gotoPage={getCarousels} currentPage={currentPage} total={total} />
       </div>

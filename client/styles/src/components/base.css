@@ -59,4 +59,5 @@ body {
   width:$content-width;
   margin:0 auto;
   background-color:#fff;
+  overflow:hidden;
 }

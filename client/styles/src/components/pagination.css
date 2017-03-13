@@ -1,8 +1,8 @@
 @import './_variable.css';
 
 .pagination {
-  position:absolute;
-  right:74px;
+  /* position:absolute; */
+  float:right;
   height:30px;
   margin-top:35px;
   .page-item {
