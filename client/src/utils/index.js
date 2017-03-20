@@ -1,5 +1,5 @@
 function getContentHeight() {
-  return `${window.innerHeight - 100 - 150}px`;
+  return `${window.innerHeight - 100 - 80 - 40}px`;
 }
 
 

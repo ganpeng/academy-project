@@ -11,7 +11,13 @@ class Footer extends Component {
   render() {
     return (
       <div className="footer">
-        <Link to="/admin" style={{color:"#fff", padding:"30px"}}>管理员</Link>
+        <div className="link-wrapper">
+          <Link to="/admin" style={{color:"#fff"}}>关于我们</Link>&nbsp;|&nbsp;
+          <Link to="/admin" style={{color:"#fff"}}>加入我们</Link>&nbsp;|&nbsp;
+          <Link to="/admin" style={{color:"#fff"}}>合作申请</Link>&nbsp;|&nbsp;
+          <Link to="/admin" style={{color:"#fff"}}>意见反馈</Link>
+        </div>
+        <p className="copyright">&copy; 2016-2017 沪ICP备13004620号-5</p>
       </div>
     );
   }
