@@ -24,13 +24,15 @@
     height:100%;
     .nav-item {
       display:inline-block;
-      height:100%;
+      /* height:100%; */
+      height:97px;
       padding:0 10px;
+      border-bottom: 3px solid transparent;
       &.active {
-        background-color:$nav-color;
-        .item-text {
-          color:#fff;
-        }
+        /* background-color:$nav-color; */
+        /* .item-text { */
+        /*   color:#fff; */
+        /* } */
       }
       .item-icon {
         display:block;
@@ -42,51 +44,60 @@
         height:35px;
         background:url('../../images/introduction2.png') no-repeat center center;
       }
-      &:nth-of-type(1).active .item-icon {
-        width:30px;
-        height:35px;
-        background:url('../../images/introduction.png') no-repeat center center;
+      &:nth-of-type(1).active,
+      &:nth-of-type(2).active,
+      &:nth-of-type(3).active,
+      &:nth-of-type(4).active,
+      &:nth-of-type(5).active
+      {
+        border-bottom: 3px solid $nav-color;
       }
+      /* &:nth-of-type(1).active .item-icon { */
+      /*   width:30px; */
+      /*   height:35px; */
+      /*   border-bottom: 3px solid $nav-color; */
+      /*   background:url('../../images/introduction.png') no-repeat center center; */
+      /* } */
       &:nth-of-type(2) .item-icon {
         width:36px;
         height:35px;
         background:url('../../images/org_active.png') no-repeat center center;
       }
-      &:nth-of-type(2).active .item-icon {
-        width:36px;
-        height:35px;
-        background:url('../../images/org.png') no-repeat center center;
-      }
+      /* &:nth-of-type(2).active .item-icon { */
+      /*   width:36px; */
+      /*   height:35px; */
+      /*   background:url('../../images/org.png') no-repeat center center; */
+      /* } */
       &:nth-of-type(3) .item-icon {
         width:33px;
         height:35px;
         background:url('../../images/constitution.png') no-repeat center center;
       }
-      &:nth-of-type(3).active .item-icon {
-        width:33px;
-        height:35px;
-        background:url('../../images/constitution2.png') no-repeat center center;
-      }
+      /* &:nth-of-type(3).active .item-icon { */
+      /*   width:33px; */
+      /*   height:35px; */
+      /*   background:url('../../images/constitution2.png') no-repeat center center; */
+      /* } */
       &:nth-of-type(4) .item-icon {
         width:38px;
-        height:38px;
+        height:35px;
         background:url('../../images/expert.png') no-repeat center center;
       }
-      &:nth-of-type(4).active .item-icon {
-        width:38px;
-        height:38px;
-        background:url('../../images/expert2.png') no-repeat center center;
-      }
+      /* &:nth-of-type(4).active .item-icon { */
+      /*   width:38px; */
+      /*   height:35px; */
+      /*   background:url('../../images/expert2.png') no-repeat center center; */
+      /* } */
       &:nth-of-type(5) .item-icon {
         width:28px;
-        height:36px;
+        height:35px;
         background:url('../../images/leader.png') no-repeat center center;
       }
-      &:nth-of-type(5).active .item-icon {
-        width:28px;
-        height:36px;
-        background:url('../../images/leader2.png') no-repeat center center;
-      }
+      /* &:nth-of-type(5).active .item-icon { */
+      /*   width:28px; */
+      /*   height:35px; */
+      /*   background:url('../../images/leader2.png') no-repeat center center; */
+      /* } */
     }
     .item-text {
       font-size:16px;
